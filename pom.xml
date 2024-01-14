@@ -10,20 +10,24 @@
 	</parent>
 
 	<groupId>ru.kmeansfan</groupId>
-	<artifactId>mono</artifactId>
+	<artifactId>mono-reactive</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>mono</name>
-	<description>Mono project setup</description>
+	<description>Reactive test</description>
 
 	<properties>
 		<java.version>20</java.version>
 	</properties>
 
 	<modules>
-		<module>module1</module>
+		<module>name-generator</module>
 	</modules>
 
+	<dependencyManagement>
+		<dependencies>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>

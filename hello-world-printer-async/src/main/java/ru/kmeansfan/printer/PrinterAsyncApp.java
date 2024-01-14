@@ -1,13 +1,12 @@
-package ru.kmeansfan.module1;
+package ru.kmeansfan.printer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Module1Application {
-
+public class PrinterAsyncApp {
 	public static void main(String[] args) {
-		SpringApplication.run(Module1Application.class, args);
+		SpringApplication.run(PrinterAsyncApp.class, args);
 	}
 
 }

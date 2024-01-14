@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ru.kmeansfan</groupId>
-        <artifactId>mono</artifactId>
+        <artifactId>mono-reactive</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>module1</artifactId>
+    <artifactId>name-generator</artifactId>
 
     <dependencies>
         <dependency>
