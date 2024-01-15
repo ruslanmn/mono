@@ -14,11 +14,11 @@ import java.util.function.Function;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/print")
+@RequestMapping("/api")
 public class PrintController {
     private final WebClient nameWebClient;
 
-    @GetMapping
+    @GetMapping("/print")
     public Mono<String> print() {
         return nameWebClient.get()
             .uri("/api/name")
@@ -27,5 +27,16 @@ public class PrintController {
             .map(name -> "Hello, " + name)
             .doOnNext(log::info)
             .doOnError(throwable -> log.error("Failed to generate name", throwable));
+    }
+
+    @GetMapping("/log")
+    public void log() {
+        var flux = nameWebClient.get()
+            .uri("/api/name")
+            .exchangeToMono(clientResponse ->
+                clientResponse.bodyToMono(String.class))
+            .map(name -> "Hello, " + name);
+        flux.subscribe(log::info);
+        flux.subscribe(log::info);
     }
 }
